@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="App.css">
+</head>
+
+<body>
+    
+    
+<div class="haut">
+    <div><h2>YOUR WEATHER APP</h2></div>
+    <div>Today</div>
+    <div>Yesterday</div>
+    <div>Weekend</div>
+    <div>10-Days</div>
+    <button>Thème d'affichage</button>
+
+   
+</div>
+ <div class="barr">
+
+<input type="text" id="ip" placeholder="Recherchez une ville">
+
+
+
+    </div>
+
+<img class="img1" src="JantT.png" alt="">
+
+</div>
+
+<div class="photo">
+<div><img src="frezing.png" alt=""></div>
+<div><img src="FogT.png" alt=""></div>
+<div><img src="RainT.png" alt=""></div>
+<div><img src="hotT.png" alt=""></div>
+
+
+
+</div>
+
+
+
+    <script>
+
+//     fetch('https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric')
+// .then(Response=> console.log(Response))
+
+
+ fetch('https://api.openweathermap.org/data/2.5/forecast?id=524901&appid=0962d6568950d8abd49bf2891e647fac')
+.then(Response=> Response.json())
+.then(data=> console.log(data))
+
+
+
+
+</script>
+</body>
+</html>
+

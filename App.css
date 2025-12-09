@@ -1,0 +1,71 @@
+
+body{
+
+background-color: antiquewhite;
+
+
+}
+.haut{
+display: flex;
+align-items: first baseline;
+background-color: peru;
+gap: 100px;
+height: 80px;
+box-shadow: rgb(163, 140, 12);
+
+}
+.haut button{
+
+margin: auto;
+align-items: end;
+float: right;
+border-radius: 30px;
+ width: 200px;
+
+}
+.haut h2{
+
+background-color: brown;
+ height: 60px;;
+
+
+
+}
+.barr{
+
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    position: relative;
+    margin-top: 10px;
+}
+
+.barr input {
+    border-color: rgb(14, 14, 14);
+    width:300px ;
+    border-radius: 30px;
+    background-color: rgb(224, 187, 175);
+    height: 20px;
+}
+.photo{
+
+height: 10px;
+width: 170px;
+gap: 100px;
+margin-top: 30px;
+margin-bottom:30px ;
+flex-direction: column;
+gap: 100px;
+display: flex;
+
+
+
+} 
+
+.img1{
+
+ align-items: end;
+ float: right;
+
+
+}
