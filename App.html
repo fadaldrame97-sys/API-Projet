@@ -44,7 +44,14 @@
 
 </div>
 
+<div class=" InfosWether">
 
+
+
+
+
+
+</div>
 
     <script>
 
@@ -60,15 +67,37 @@
 var weer= document.getElementById("weer")
 weer.onclick = function(){
 
-    document.body.classList.toggle("DarkTm")
+document.body.classList.toggle("DarkTm")
 }
- var ip=document.querySelector(ip)
- var Cheek=querySelector(Cheek)
+ var ip=document.querySelector("#ip")
+ var Cheek=document.querySelector(".Cheek")
+ const API_KEY='0962d6568950d8abd49bf2891e647fac'
+ const ville= 'Paris'
 
 Cheek.addEventListener('click', ()=>{
-
+ if (ip.value.trim()!=''){
     console.log(ip.value)
+ }
+    
 })
+
+function afficherInfos(){
+    
+    const { name=city,
+        main:{tempratur,visibilty}
+        
+
+    }=data;
+
+    InfosWether.appenChild()
+    InfosWether.appenChild()
+    InfosWether.appenChild()
+    InfosWether.appenChild()
+
+
+
+
+}
 
 </script>
 </body>
