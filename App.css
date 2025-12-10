@@ -1,31 +1,47 @@
 
 body{
 
-background-color: antiquewhite;
+background-color: var(--second-color);
 
+}
+
+.DarkTm{
+--primary-color: #0edf2fc;
+--second-color: #212121;
+
+}
+
+:root{
+
+--primary-color: #0edf2fc;
+--second-color: #f2ebeb;
+
+}
+i{
+
+font-size: 100px;
+cursor: pointer;
 
 }
 .haut{
 display: flex;
 align-items: first baseline;
-background-color: peru;
+background-color:white;
 gap: 100px;
 height: 80px;
 box-shadow: rgb(163, 140, 12);
 
 }
-.haut button{
+.haut moon{
 
 margin: auto;
 align-items: end;
 float: right;
-border-radius: 30px;
- width: 200px;
 
 }
 .haut h2{
 
-background-color: brown;
+background-color: var(--primary-color);
  height: 60px;;
 
 

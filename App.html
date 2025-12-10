@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="App.css">
-</head>
-
-<body>
+    <script src="App.js" defer></script>
     
+    <body>
+   
     
 <div class="haut">
     <div><h2>YOUR WEATHER APP</h2></div>
@@ -16,19 +16,21 @@
     <div>Yesterday</div>
     <div>Weekend</div>
     <div>10-Days</div>
-    <button>Thème d'affichage</button>
+    <div><img class="moon" src="Dark.png" id="weer" ></div>
+   
 
    
 </div>
  <div class="barr">
 
 <input type="text" id="ip" placeholder="Recherchez une ville">
+<button class="Cheek">Recherchez</button>
 
 
 
     </div>
 
-<img class="img1" src="JantT.png" alt="">
+<img class="img1" src="sun-removebg-preview.png" alt="">
 
 </div>
 
@@ -48,14 +50,25 @@
 
 //     fetch('https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric')
 // .then(Response=> console.log(Response))
-
+ 
 
  fetch('https://api.openweathermap.org/data/2.5/forecast?id=524901&appid=0962d6568950d8abd49bf2891e647fac')
 .then(Response=> Response.json())
 .then(data=> console.log(data))
 
 
+var weer= document.getElementById("weer")
+weer.onclick = function(){
 
+    document.body.classList.toggle("DarkTm")
+}
+ var ip=document.querySelector(ip)
+ var Cheek=querySelector(Cheek)
+
+Cheek.addEventListener('click', ()=>{
+
+    console.log(ip.value)
+})
 
 </script>
 </body>
