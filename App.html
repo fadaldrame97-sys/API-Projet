@@ -7,51 +7,100 @@
     <link rel="stylesheet" href="App.css">
     <script src="App.js" defer></script>
     
-    <body>
-   
-    
-<div class="haut">
+   </head>
+   <body>
+
+    <div class="haut">
     <div><h2>YOUR WEATHER APP</h2></div>
     <div>Today</div>
     <div>Yesterday</div>
     <div>Weekend</div>
     <div>10-Days</div>
-    <div><img class="moon" src="Dark.png" id="weer" ></div>
-   
-
-   
-</div>
- <div class="barr">
-
-<input type="text" id="ip" placeholder="Recherchez une ville">
-<button class="Cheek">Recherchez</button>
-
-
-
+    <div><img class="Cheek" src="Dark.png" id="weer" alt="" ></div>
     </div>
 
-<img class="img1" src="sun-removebg-preview.png" alt="">
+      
+      <div class="Card">
 
+<div class="Recherche" >
+<input type="text" id="ip" placeholder="Recherchez une ville" spellcheck="false">
+ <button>Recherchez</button>     
 </div>
 
-<div class="photo">
+<!-- <img class="img1" src="sun-removebg-preview.png" alt=""> -->
+
+</div>
+     <img class="img1" src="sun-removebg-preview.png" alt="">
+    <div class="climat">
+<div>
+       <img src="RainT.png" class="IconClmat" alt="">
+       <h1 class="temp">22 C </h1> 
+       <div class="city"><h2>Rabat</h2></div>
+       <div class="ditals">
+
+        <div class="colon1">
+            <img src="frezing.png" alt="">
+            <div>  
+                <h1 class="humidity">50%</h1>
+                <h2>Humidity</h2>
+            </div>
+        </div>
+
+        <div class="colon">
+            <img src="hotT.png" alt="">
+            <div>
+                <h1 class="wind">10 km/h</h1>
+                <h2>Wind</h2>
+            </div>
+            
+       </div>
+
+    </div>
+</div>
+
+
+
+
+        
+
+
+   
+<!-- </div> -->
+ <!-- <div class="barr">
+
+<input type="text" id="ip" placeholder="Recherchez une ville">
+<button class="Cheek" onclick="checkWeather('.barr input')">Recherchez</button> -->
+<!-- <input type="text" id="ip" placeholder="Recherchez une ville">
+<button id="clk">Recherchez</button> -->
+
+  
+
+
+
+
+<!-- <div class="photo">
+<img src="frezing.png" alt="">
+<h1 class="température" > 22 C </h1>
+<h2  class="City" >Newyork</h2>
+<div class="Détails">
+   <div  class="cold">
+    <img src="frezing.png" alt="">
+   <div>
+   <p  class="humidity">50%</p>
+   <p>humidity</p>
+</div>
+</div> -->
+
+
+<!-- <div class="photo">
 <div><img src="frezing.png" alt=""></div>
 <div><img src="FogT.png" alt=""></div>
 <div><img src="RainT.png" alt=""></div>
-<div><img src="hotT.png" alt=""></div>
-
-
+<div><img src="hotT.png" alt=""></div> -->
 
 </div>
 
-<div class=" InfosWether">
 
-
-
-
-
-
-</div>
 
     <script>
 
@@ -59,47 +108,98 @@
 // .then(Response=> console.log(Response))
  
 
- fetch('https://api.openweathermap.org/data/2.5/forecast?id=524901&appid=0962d6568950d8abd49bf2891e647fac')
-.then(Response=> Response.json())
-.then(data=> console.log(data))
+//  fetch('https://api.openweathermap.org/data/2.5/forecast?id=524901&appid=0962d6568950d8abd49bf2891e647fac')
+// .then(Response=> Response.json())
+// .then(data=> console.log(data))
 
 
 var weer= document.getElementById("weer")
 weer.onclick = function(){
 
-document.body.classList.toggle("DarkTm")
+    document.body.classList.toggle("DarkTm")
 }
  var ip=document.querySelector("#ip")
  var Cheek=document.querySelector(".Cheek")
- const API_KEY='0962d6568950d8abd49bf2891e647fac'
- const ville= 'Paris'
 
 Cheek.addEventListener('click', ()=>{
- if (ip.value.trim()!=''){
+
     console.log(ip.value)
- }
-    
 })
 
-function afficherInfos(){
+
+ const apiKey = '0962d6568950d8abd49bf2891e647fac';
+ const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=';
+ const Recherche = document.querySelector('.Recherche input');
+ const button = document.querySelector('.Recherche button');    
+// fetch('https://api.openweathermap.org/data/2.5/forecast?id=524901&appid=0962d6568950d8abd49bf2891e647fac')
+// .then(Response=> Response.json())
+// .then(data=> console.log(data))
+
+
+  
+//  async function checkWeather(city) {
+//      try {
+//     //  const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+//     //  if (!response.ok) throw new Error ("No city dispo");
+//     //  var data = await response.json();
+
+//     const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+//     const response = await fetch(URL);
+//     const data = await response.json()
+ 
+//     //  console.log(data);
+// //         document.querySelector(".City").textContent = data.name;
+// //         document.querySelector(".température").textContent ='${data.main.temp}' + "°C";
+// //         document.querySelector(".humidity").textContent = '${data.main.humidity}'  + "%"; 
+  
+// //  }
+// document.querySelector(".City").textContent = data.name;
+// document.querySelector(".température").textContent = `${Math.round(data.main.temp)}`;
+// document.querySelector(".humidity").textContent = `${data.main.humidity}`;
+//  }
+
+//  catch (error) {
+//      alert(error.message);
+//  }}
+// const clk = document.getElementById("clk");
+// clk.addEventListener("click", () => {
+//     const city = ip.value;
+//     checkWeather(city);
+// });
+async function checkWeather(city) {
+
+    try{ 
     
-    const { name=city,
-        main:{tempratur,visibilty}
-        
+        // const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
 
-    }=data;
+        const data = await response.json();
 
-    InfosWether.appenChild()
-    InfosWether.appenChild()
-    InfosWether.appenChild()
-    InfosWether.appenChild()
+        console.log(data);
 
+        document.querySelector(".city h2").textContent = data.name;
+        document.querySelector(".temp").textContent = data.main.temp + " °C";
+            // `${Math.round(data.main.temp)}°C`;
+        document.querySelector(".humidity").textContent = data.main.humidity + "%";
+            // `${data.main.humidity}%`;
+        document.querySelector(".wind").textContent =data.wind.speed + " km/h";
+            // `${data.main.humidity}%`;
+    } 
+    catch (error) {
+        alert("Ville introuvable");
+    }}
 
+    button.addEventListener('click', () => {
+        const city = Recherche.value;
+        checkWeather(city);
 
+         
+    });
 
-}
-
+  
 </script>
 </body>
+
 </html>
+
 
