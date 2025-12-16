@@ -12,10 +12,10 @@
 
     <div class="haut">
     <div><h2>YOUR WEATHER APP</h2></div>
-    <div>Today</div>
-    <div>Yesterday</div>
-    <div>Weekend</div>
-    <div>10-Days</div>
+    <div><h3>Today</h3></div>
+    <div><h3>Yesterday</h3></div>
+    <div><h3>Weekend</h3></div>
+    <div><h3>10Days</h3></div>
     <div><img class="Cheek" src="Dark.png" id="weer" alt="" ></div>
     </div>
 
@@ -30,11 +30,11 @@
 <!-- <img class="img1" src="sun-removebg-preview.png" alt=""> -->
 
 </div>
-     <img class="img1" src="sun-removebg-preview.png" alt="">
+     <img class="img1" src="clm-removebg-preview.png" alt="">
     <div class="climat">
 <div>
-       <img src="RainT.png" class="IconClmat" alt="">
-       <h1 class="temp">22 C </h1> 
+       <img src="sun-removebg-preview.png" class="IconClmat" alt="">
+       <h1 class="temp">22 °C </h1> 
        <div class="city"><h2>Rabat</h2></div>
        <div class="ditals">
 
@@ -47,10 +47,11 @@
         </div>
 
         <div class="colon">
-            <img src="hotT.png" alt="">
+            <img src="himidity-removebg-preview.png" alt="">
             <div>
                 <h1 class="wind">10 km/h</h1>
                 <h2>Wind</h2>
+                <img src="WindT.png" alt="">
             </div>
             
        </div>
@@ -130,7 +131,8 @@ Cheek.addEventListener('click', ()=>{
  const apiKey = '0962d6568950d8abd49bf2891e647fac';
  const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=';
  const Recherche = document.querySelector('.Recherche input');
- const button = document.querySelector('.Recherche button');    
+ const button = document.querySelector('.Recherche button');
+ const IconClmat= document.querySelector(".IconClmat") ;  
 // fetch('https://api.openweathermap.org/data/2.5/forecast?id=524901&appid=0962d6568950d8abd49bf2891e647fac')
 // .then(Response=> Response.json())
 // .then(data=> console.log(data))
@@ -184,6 +186,19 @@ async function checkWeather(city) {
             // `${data.main.humidity}%`;
         document.querySelector(".wind").textContent =data.wind.speed + " km/h";
             // `${data.main.humidity}%`;
+
+            if(data.weather[0].main =="Clouds"){
+              IconClmat.src= "frezing.png"
+            }
+            else if(data.weather[0].main =="Clear"){
+             IconClmat.src= "HotT.png"
+
+            }
+
+            else if(data.weather[0].main =="Rain"){
+             IconClmat.src= "RainT.png"
+ } 
+            
     } 
     catch (error) {
         alert("Ville introuvable");

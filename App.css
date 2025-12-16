@@ -26,10 +26,13 @@ cursor: pointer;
 .haut{
 display: flex;
 align-items: first baseline;
-background-color:white;
+background-color:rgb(97, 222, 231);
 gap: 100px;
 height: 80px;
-box-shadow: rgb(163, 140, 12);
+box-shadow: rgb(69, 59, 3);
+box-shadow: #0c50e2;
+border-radius: 5%;
+border: #212121;
 
 }
 .haut moon{
